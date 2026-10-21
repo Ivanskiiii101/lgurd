@@ -1,0 +1,79 @@
+0 verbose cli /opt/homebrew/Cellar/node/24.9.0_1/bin/node /opt/homebrew/bin/npm
+1 info using npm@11.6.0
+2 info using node@v24.9.0
+3 silly config load:file:/opt/homebrew/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/mateoturina/Desktop/Personal Web/.npmrc
+5 silly config load:file:/Users/mateoturina/.npmrc
+6 silly config load:file:/opt/homebrew/etc/npmrc
+7 verbose title npm install tsx
+8 verbose argv "install" "--save-dev" "tsx"
+9 verbose logfile logs-max:10 dir:/Users/mateoturina/Desktop/Personal Web/.npm-cache/_logs/2025-12-22T13_45_53_069Z-
+10 verbose logfile /Users/mateoturina/Desktop/Personal Web/.npm-cache/_logs/2025-12-22T13_45_53_069Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly idealTree buildDeps
+14 silly fetch manifest next@15.0.0-canary.62
+15 silly packumentCache full:https://registry.npmjs.org/next cache-miss
+16 http cache https://registry.npmjs.org/next 31ms (cache hit)
+17 silly packumentCache full:https://registry.npmjs.org/next set size:28192294 disposed:false
+18 silly fetch manifest @opentelemetry/api@^1.1.0
+19 silly packumentCache full:https://registry.npmjs.org/@opentelemetry%2fapi cache-miss
+20 http cache https://registry.npmjs.org/@opentelemetry%2fapi 2ms (cache hit)
+21 silly packumentCache full:https://registry.npmjs.org/@opentelemetry%2fapi set size:455567 disposed:false
+22 silly fetch manifest @playwright/test@^1.41.2
+23 silly packumentCache full:https://registry.npmjs.org/@playwright%2ftest cache-miss
+24 http cache https://registry.npmjs.org/@playwright%2ftest 8ms (cache hit)
+25 silly packumentCache full:https://registry.npmjs.org/@playwright%2ftest set size:8561348 disposed:false
+26 silly fetch manifest babel-plugin-react-compiler@*
+27 silly packumentCache full:https://registry.npmjs.org/babel-plugin-react-compiler cache-miss
+28 http fetch GET 200 https://registry.npmjs.org/babel-plugin-react-compiler 250ms (cache miss)
+29 silly packumentCache full:https://registry.npmjs.org/babel-plugin-react-compiler set size:undefined disposed:false
+30 silly fetch manifest react@^18.3.1
+31 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+32 http cache https://registry.npmjs.org/react 7ms (cache hit)
+33 silly packumentCache full:https://registry.npmjs.org/react set size:6362607 disposed:false
+34 silly fetch manifest react@19.0.0-rc.0
+35 silly packumentCache full:https://registry.npmjs.org/react cache-miss
+36 http cache https://registry.npmjs.org/react 9ms (cache hit)
+37 silly packumentCache full:https://registry.npmjs.org/react set size:6362607 disposed:false
+38 verbose stack Error: unable to resolve dependency tree
+38 verbose stack     at #failPeerConflict (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1407:25)
+38 verbose stack     at #loadPeerSet (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:1373:33)
+38 verbose stack     at async #buildDepStep (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:917:11)
+38 verbose stack     at async Arborist.buildIdealTree (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/build-ideal-tree.js:182:7)
+38 verbose stack     at async Promise.all (index 1)
+38 verbose stack     at async Arborist.reify (/opt/homebrew/lib/node_modules/npm/node_modules/@npmcli/arborist/lib/arborist/reify.js:126:5)
+38 verbose stack     at async Install.exec (/opt/homebrew/lib/node_modules/npm/lib/commands/install.js:150:5)
+38 verbose stack     at async Npm.exec (/opt/homebrew/lib/node_modules/npm/lib/npm.js:208:9)
+38 verbose stack     at async module.exports (/opt/homebrew/lib/node_modules/npm/lib/cli/entry.js:67:5)
+39 error code ERESOLVE
+40 error ERESOLVE unable to resolve dependency tree
+41 error
+42 error While resolving: lgurd-ecommerce@0.1.0
+42 error Found: react@18.3.1
+42 error node_modules/react
+42 error   react@"^18.3.1" from the root project
+42 error
+42 error Could not resolve dependency:
+42 error peer react@"19.0.0-rc.0" from next@15.0.0-canary.62
+42 error node_modules/next
+42 error   next@"15.0.0-canary.62" from the root project
+42 error
+42 error Fix the upstream dependency conflict, or retry
+42 error this command with --force or --legacy-peer-deps
+42 error to accept an incorrect (and potentially broken) dependency resolution.
+43 error
+43 error
+43 error For a full report see:
+43 error /Users/mateoturina/Desktop/Personal Web/.npm-cache/_logs/2025-12-22T13_45_53_069Z-eresolve-report.txt
+44 silly unfinished npm timer reify 1766411153171
+45 silly unfinished npm timer reify:loadTrees 1766411153171
+46 silly unfinished npm timer idealTree:buildDeps 1766411153179
+47 silly unfinished npm timer idealTree:#root 1766411153179
+48 verbose cwd /Users/mateoturina/Desktop/Personal Web
+49 verbose os Darwin 24.3.0
+50 verbose node v24.9.0
+51 verbose npm  v11.6.0
+52 verbose exit 1
+53 verbose code 1
+54 error A complete log of this run can be found in: /Users/mateoturina/Desktop/Personal Web/.npm-cache/_logs/2025-12-22T13_45_53_069Z-debug-0.log

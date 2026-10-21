@@ -1,0 +1,78 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum CurrencyCode {
+  usd
+  eur
+  gbp
+}
+
+enum OrderStatus {
+  pending
+  payment_processing
+  payment_failed
+  paid
+  fulfilled
+  cancelled
+}
+
+model Product {
+  id               String        @id @default(cuid())
+  slug             String        @unique
+  name             String
+  description      String
+  priceCents       Int
+  currency         CurrencyCode
+  volumeMl         Int
+  concentration    String
+  heroImageUrl     String
+  galleryImageUrls String[]
+  notes            Json?
+  tags             String[]
+  isLimitedEdition Boolean       @default(false)
+  isFeatured       Boolean       @default(false)
+  stockKeepingUnit String        @unique
+  createdAt        DateTime      @default(now())
+  updatedAt        DateTime      @updatedAt
+
+  orderItems       OrderItem[]
+}
+
+model OrderItem {
+  id               String       @id @default(cuid())
+  order            Order        @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  orderId          String
+  product          Product      @relation(fields: [productId], references: [id])
+  productId        String
+  productName      String
+  stockKeepingUnit String
+  quantity         Int
+  unitPriceCents   Int
+  currency         CurrencyCode
+}
+
+model Order {
+  id                    String          @id @default(cuid())
+  customerId            String?
+  stripeCustomerId      String?
+  stripeCheckoutSessionId String?       @unique
+  stripeSessionId       String?         @map("stripe_session_id")
+  status                OrderStatus
+  subtotalCents         Int
+  taxCents              Int
+  shippingCents         Int
+  totalCents            Int
+  currency              CurrencyCode
+  customerDetails       Json
+  shippingAddress       Json
+  placedAt              DateTime        @default(now())
+  updatedAt             DateTime        @updatedAt
+
+  items                 OrderItem[]
+}
+

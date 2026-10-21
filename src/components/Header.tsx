@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { CartDrawer } from "@/components/CartDrawer";
@@ -17,40 +18,40 @@ export function Header() {
   return (
     <>
       <header className="flex items-center justify-between border-b border-neutral-800/50 pb-6">
-        <a href="/" className="flex items-center gap-2 md:gap-4 hover:opacity-80 transition-opacity">
+        <Link href="/" className="flex items-center gap-2 md:gap-4 hover:opacity-80 transition-opacity">
           <div className="h-10 w-10 md:h-14 md:w-14 rounded-full bg-gradient-to-br from-lgurd-gold-light via-lgurd-gold to-lgurd-gold-dark shadow-gold-glow flex items-center justify-center flex-shrink-0">
             <span className="text-xl md:text-2xl font-heading text-black font-bold">L</span>
           </div>
           <Logo className="hidden sm:flex" />
           <Logo className="sm:hidden" showTagline={false} />
-        </a>
+        </Link>
         
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 text-sm uppercase tracking-[0.2em] text-neutral-400 lg:flex">
-          <a 
+          <Link 
             href="/"
             className="relative hover:text-lgurd-gold transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-lgurd-gold after:transition-all after:duration-300 hover:after:w-full"
           >
             Home
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/#collection"
             className="relative hover:text-lgurd-gold transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-lgurd-gold after:transition-all after:duration-300 hover:after:w-full"
           >
             Collections
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/maison"
             className="relative hover:text-lgurd-gold transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-lgurd-gold after:transition-all after:duration-300 hover:after:w-full"
           >
             Maison
-          </a>
-          <a 
+          </Link>
+          <Link 
             href="/journal"
             className="relative hover:text-lgurd-gold transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-lgurd-gold after:transition-all after:duration-300 hover:after:w-full"
           >
             Journal
-          </a>
+          </Link>
           <button
             onClick={() => setIsCartOpen(true)}
             className="relative flex items-center justify-center hover:text-lgurd-gold transition-all duration-300 p-2"
@@ -169,34 +170,34 @@ export function Header() {
 
               {/* Mobile menu links */}
               <div className="flex-1 overflow-y-auto px-6 py-8 space-y-6">
-                <a
+                <Link
                   href="/"
                   onClick={handleLinkClick}
                   className="block text-lg uppercase tracking-[0.2em] text-neutral-400 hover:text-lgurd-gold transition-colors duration-300 py-2 border-b border-neutral-800/30"
                 >
                   Home
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/#collection"
                   onClick={handleLinkClick}
                   className="block text-lg uppercase tracking-[0.2em] text-neutral-400 hover:text-lgurd-gold transition-colors duration-300 py-2 border-b border-neutral-800/30"
                 >
                   Collections
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/maison"
                   onClick={handleLinkClick}
                   className="block text-lg uppercase tracking-[0.2em] text-neutral-400 hover:text-lgurd-gold transition-colors duration-300 py-2 border-b border-neutral-800/30"
                 >
                   Maison
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/journal"
                   onClick={handleLinkClick}
                   className="block text-lg uppercase tracking-[0.2em] text-neutral-400 hover:text-lgurd-gold transition-colors duration-300 py-2 border-b border-neutral-800/30"
                 >
                   Journal
-                </a>
+                </Link>
               </div>
             </div>
           </nav>

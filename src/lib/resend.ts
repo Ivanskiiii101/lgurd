@@ -131,7 +131,7 @@ export async function sendOrderEmails(orderData: OrderEmailData) {
 
   // Admin notification email (only send if admin email is configured)
   const adminEmail = process.env.RESEND_ADMIN_EMAIL;
-  let adminEmailResult: { data: any; error: any } = { data: null, error: null };
+  let adminEmailResult: { data: unknown; error: unknown } = { data: null, error: null };
   
   if (adminEmail) {
     adminEmailResult = await resend.emails.send({
